@@ -4,7 +4,7 @@
 
 # React Toolbox Themr
 
-A command line tool to help you extract [react-toolbox](http://react-toolbox.com) style modules to static files so you can integrate it in nearly any stack.
+A command line tool to help you extract the style modules from [react-toolbox](http://react-toolbox.com) to static files so you can integrate it in nearly any stack.
 
 ```
 $ yarn add --dev react-toolbox-themr react-toolbox@2.0.0-beta.6
@@ -18,7 +18,7 @@ Note it only works with **React Toolbox 2.0 beta**. The output path shown in the
 
 [React Toolbox 2.0](https://github.com/react-toolbox/react-toolbox/releases) styles have been rewritten using [postcss](https://github.com/postcss/postcss). This gives us more flexibility and makes the library more powerful allowing things like live transforming in the browser. We still use [CSS Modules](https://github.com/css-modules/css-modules) thought, and some people find difficult to integrate the library in their current stack, specially when [Webpack](https://webpack.github.io/) is not included or accessible.
 
-Sometimes it's annoying to configure react-toolbox to import CSS so this package will help you making easier to try out the library and providing an easy integration with tools like [react-create-app](https://github.com/facebookincubator/create-react-app). It will help you extracting the CSS modules into static files you can import in your application, making react-toolbox very easy to adopt.
+Sometimes it's annoying to configure react-toolbox to import CSS so this package will help make it easier to try out the library and provides an easy integration with tools like [react-create-app](https://github.com/facebookincubator/create-react-app). It will help you extract the CSS modules into static files that you can then import into your application, making react-toolbox very easy to adopt.
 
 ## Usage
 
@@ -28,7 +28,7 @@ First of all you have to add `react-toolbox-themr` to your project as a developm
 $ yarn add --dev react-toolbox-themr
 ```
 
-Once installed you can define the configuration in the `package.json` file of your project or through the `--config <path/to/json>` option. If you want to use your `package.json` to store configuration, the `reactToolbox` key should be used on the top level to find your settings:
+Once installed you can define the configuration in the `package.json` file of your project or through the `--config <path/to/json>` option. If you want to use your `package.json` to store the configuration, the `reactToolbox` key should be used on the top level to find your settings:
 
 ```json
 "reactToolbox": {
@@ -55,9 +55,9 @@ Then you must add a script in your `package.json` to run the builder.
 }
 ```
 
-After this, you can run from the console the command `yarn run toolbox` and the script will create an `assets/react-toolbox` folder and two different files:
+After this, you can run the command `yarn run toolbox` from the console and the script will create an `assets/react-toolbox` folder and two different files:
 
-- `theme.css` includes all CSS from react-toolbox for the components you have specified in the configuration.
+- `theme.css` includes all the CSS for the react-toolbox components you have specified in the configuration.
 - `theme.js` implements a javascript object (a css module) that tells react-toolbox components what are the `classNames` each included component needs to use.
 
 As a final step you have to include the generated CSS file in your document just like any other CSS asset. Also, you have to use [react-css-themr](https://github.com/javivelasco/react-css-themr) `ThemeProvider` at the top of your app passing the theme.
@@ -75,7 +75,7 @@ const App = ({ children }) => (
 export default App;
 ```
 
-Although `ThemeProvider` is exposed by react-toolbox, you can add your own importing directly from [react-css-themr](https://github.com/javivelasco/react-css-themr).
+Although `ThemeProvider` is exposed by react-toolbox, you can add your own import directly from [react-css-themr](https://github.com/javivelasco/react-css-themr).
 
 **Finally, *make sure* the components you use from react-toolbox are imported without bundled css:**
 
@@ -96,7 +96,7 @@ As `react-toolbox-themr` is a command line utility, you can use it from the comm
 $ react-toolbox-themr -i BUTTON DATE_PICKER -o my-theme/
 ```
 
-But we really encourage you to use either `package.json` or a custom configuration file so it's more clear to visualize your configuration. Passing configuration variables is allowed only via package of custom config file.
+But we really encourage you to use either `package.json` or a custom configuration file so it's more clear and easier to visualize your configuration. Passing configuration variables is allowed only via package of custom config file.
 
 
 ## Configuration options
@@ -113,7 +113,7 @@ All of these options have the same name if you use them in your `package.json`, 
 
 ## About
 
-The project is originally authored by [Javi Velasco](https://twitter.com/javivelasco) as an effort of providing a better adoption experience for React Toolbox. Any comments, improvements or feedback are highly appreciated.
+The project is originally authored by [Javi Velasco](https://twitter.com/javivelasco) in effort to provide a better adoption experience for React Toolbox. Any comments, improvements or feedback are highly appreciated.
 
 ## License
 This project is licensed under the terms of the [MIT license](https://github.com/react-toolbox/react-toolbox-themr/blob/master/LICENSE).
